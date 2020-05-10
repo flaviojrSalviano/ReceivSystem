@@ -1,0 +1,17 @@
+{
+    "name": "receiv-debts",
+    "description": "Sistema no padrão MVC, desenvolvido em PHP sem o uso de Frameworks. ",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Flavio Salviano Junior",
+            "email": "flaviojr.salviano@hotmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "require": {}
+}
