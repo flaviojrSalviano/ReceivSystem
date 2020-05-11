@@ -1,5 +1,5 @@
 {
-    "name": "receiv-debts",
+    "name": "projeto/receiv-debts",
     "description": "Sistema no padrão MVC, desenvolvido em PHP sem o uso de Frameworks. ",
     "license": "MIT",
     "authors": [

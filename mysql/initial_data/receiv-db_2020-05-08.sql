@@ -24,7 +24,7 @@ CREATE TABLE `debts` (
   `due_date` date NOT NULL,
   `updated` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
-  FOREIGN KEY (`client_id`) REFERENCES clients(`id`)
+  FOREIGN KEY (`client_id`) REFERENCES clients(`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `clients` WRITE;
