@@ -28,17 +28,17 @@
 	</nav>
 	<div class="container">
 		<div class="row">
-			<div class="card mt-3">
+			<div class="card mt-3" style="width:85vw">
 			  <div class="card-body">
 				<form action="?r=/debts/create" method="POST">
 				  <input type="hidden" id="client_id" name="client_id" value="<?php echo $_GET['client_id'] ?>">
 				  <label for="title">Título:</label><br>
-				  <input type="text" id="title" name="title" class="col-6"><br>
-				  <label for="value">Valor:</label><br>
+				  <input type="text" id="title" name="title" style="width:50vw"><br>
+				  <label for="value" class="mt-1">Valor:</label><br>
 				  <input type="text" id="value" name="value"><br>
-				  <label for="due_date">Data de vencimento:</label><br>
+				  <label for="due_date" class="mt-1">Data de vencimento:</label><br>
 				  <input type="date" id="due_date" name="due_date"><br>
-				  <input type="submit" value="Submit">
+				  <input type="submit" value="Submit" class="mt-1">
 				</form> 
 			  </div>
 			</div>

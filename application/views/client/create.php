@@ -28,7 +28,7 @@
 	</nav>
 	<div class="container">
 		<div class="row">
-			<div class="card mt-3">
+			<div class="card mt-3" style="width:85vw">
 			  <div class="card-body">
 				<form action="?r=/clients/create" method="POST">
 				  <label for="name">*Nome:</label><br>
