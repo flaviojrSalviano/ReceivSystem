@@ -30,17 +30,19 @@
 		<div class="row">
 			<div class="card mt-3" style="width:85vw">
 			  <div class="card-body">
-				<form action="?r=/clients/create" method="POST">
-				  <label for="name">*Nome:</label><br>
-				  <input type="text" id="name" name="name" style="width:400px" required><br>
-				  <label for="cpf" class="mt-2">*cpf:</label><br>
-				  <input type="text" id="cpf" name="cpf" required><br>
-				  <label for="birthday" class="mt-2">*Data de nascimento:</label><br>
-				  <input type="date" id="birthday" name="birthday" required><br>
-				  <label for="address" class="mt-2">*Endereço:</label><br>
-				  <input type="text" id="address" name="address" style="width:600px" required><br>
-				  <input type="submit" value="Salvar" class="card-link mt-2">
-				</form>
+			<?php foreach ($vars['debt'] as $debt): ?>
+				<form action="?r=/debts/edit" method="POST">
+				  <input type="hidden" id="id" name="id" value="<?php echo $debt['id'] ?>">
+				  <input type="hidden" id="client_id" name="client_id" value="<?php echo $debt['client_id'] ?>">
+				  <label for="title">Título:</label><br>
+				  <input type="text" id="title" name="title" style="width:50vw" value="<?php echo $debt['title'] ?>" required><br>
+				  <label for="value" class="mt-1">Valor:</label><br>
+				  <input type="number" step="0.01" min="0.01" id="value" name="value" value="<?php echo $debt['value'] ?>" required><br>
+				  <label for="due_date" class="mt-1">Data de vencimento:</label><br>
+				  <input type="date" id="due_date" name="due_date" value="<?php echo $debt['due_date'] ?>" required><br>
+				  <input type="submit" value="Submit" class="mt-1">
+				</form> 
+			<?php endforeach ?>
 			  </div>
 			</div>
 

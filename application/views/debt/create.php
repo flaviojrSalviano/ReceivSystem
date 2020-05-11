@@ -33,11 +33,11 @@
 				<form action="?r=/debts/create" method="POST">
 				  <input type="hidden" id="client_id" name="client_id" value="<?php echo $_GET['client_id'] ?>">
 				  <label for="title">Título:</label><br>
-				  <input type="text" id="title" name="title" style="width:50vw"><br>
+				  <input type="text" id="title" name="title" style="width:50vw" required><br>
 				  <label for="value" class="mt-1">Valor:</label><br>
-				  <input type="text" id="value" name="value"><br>
+				  <input type="number" step="0.01" min="0.01" id="value" name="value" required><br>
 				  <label for="due_date" class="mt-1">Data de vencimento:</label><br>
-				  <input type="date" id="due_date" name="due_date"><br>
+				  <input type="date" id="due_date" name="due_date" required><br>
 				  <input type="submit" value="Submit" class="mt-1">
 				</form> 
 			  </div>

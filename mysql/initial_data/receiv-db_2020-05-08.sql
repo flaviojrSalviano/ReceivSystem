@@ -4,17 +4,8 @@ USE `receiv-db`;
 # Dump of tables
 # ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `users`;
 DROP TABLE IF EXISTS `clients`;
 DROP TABLE IF EXISTS `debts`;
-
-CREATE TABLE `users` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL UNIQUE,
-  `password` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `clients` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -29,18 +20,12 @@ CREATE TABLE `debts` (
   `id` int NOT NULL AUTO_INCREMENT,
   `client_id` int NOT NULL,
   `title` varchar(255) NOT NULL,
-  `value` double NOT NULL,
+  `value` DECIMAL(10,2) NOT NULL,
   `due_date` date NOT NULL,
   `updated` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   FOREIGN KEY (`client_id`) REFERENCES clients(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-LOCK TABLES `users` WRITE;
-
-INSERT INTO `users` (`name`, `email`, `password`)
-VALUES
-	('Admin','adm@adm.com', 'q1w2e3');
 
 LOCK TABLES `clients` WRITE;
 

@@ -1,3 +1,4 @@
+<?php require_once __DIR__.'/../../Utils/Utils.php'; ?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -35,18 +36,18 @@
 <div class="row">
 				<div class="col-6">
 <label for="name">*Nome:</label><br>
-<input type="text" id="name" name="name" style="width:400px" value="<?php echo $client['name'] ?>">
+<input type="text" id="name" name="name" style="width:400px" value="<?php echo $client['name'] ?>" required>
 </div>
 				<div class="col-6">
 <label for="cpf">*cpf:</label><br>
-				  <input type="text" id="cpf" name="cpf" style="width:400px" value="<?php echo $client['cpf'] ?>">
+				  <input type="text" id="cpf" name="cpf" style="width:400px" value="<?php echo $client['cpf'] ?>" required>
 </div>
 </div>
 				  <label for="address" class="mt-2">*Endereço:</label><br>
-				  <input type="text" id="address" name="address" style="width:600px" value="<?php echo $client['address'] ?>"><br>
+				  <input type="text" id="address" name="address" style="width:600px" value="<?php echo $client['address'] ?>" required><br>
 				  <input type="hidden" id="id" name="id" value="<?php echo $client['id'] ?>">
 				  <label for="birthday" class="mt-2">*Data de nascimento:</label><br>
-				  <input type="date" id="birthday" name="birthday" value="<?php echo $client['birthday'] ?>"><br>
+				  <input type="date" id="birthday" name="birthday" value="<?php echo $client['birthday'] ?>" required><br>
 				  <input type="submit" value="Salvar alterações" class="card-link mt-2">
 				</form>
 			  </div>
@@ -73,9 +74,9 @@
     <?php foreach ($vars['debts'] as $debt): ?>
     <tr>
       <th scope="row"><?php echo $debt['title'] ?></th>
-      <td><?php echo $debt['value'] ?></td>
-      <td><?php echo $debt['due_date'] ?></td>
-      <td><?php echo $debt['update'] ?></td>
+      <td><?php echo number_format($debt['value'],2,",","."); ?></td>
+      <td><?php echo data($debt['due_date']) ?></td>
+      <td><?php echo data($debt['update']) ?></td>
       <td>
 	<a href="?r=/debts/delete&id=<?php echo $debt['id'] ?>" style="text-decoration:none; color:white">
 		<svg class="bi bi-trash-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

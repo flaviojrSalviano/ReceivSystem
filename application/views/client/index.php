@@ -1,3 +1,4 @@
+<?php require_once __DIR__.'/../../Utils/Utils.php'; ?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -48,7 +49,7 @@
     <tr>
       <th scope="row"><a href="?r=/clients/show&id=<?php echo $client['id'] ?>" style="text-decoration:none; color:white"><?php echo $client['name'] ?></a></th>
       <td><?php echo $client['cpf'] ?></td>
-      <td><?php echo $client['birthday'] ?></td>
+      <td><?php echo data($client['birthday']) ?></td>
       <td><?php echo $client['address'] ?></td>
       <td>
 	<a href="?r=/clients/show&id=<?php echo $client['id'] ?>" style="text-decoration:none; color:white">

@@ -17,9 +17,9 @@ $DB = new DB; $stmt = $DB->prepare($sql);
  
         $stmt->execute();
  
-        $users = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        $debts = $stmt->fetchAll(\PDO::FETCH_ASSOC);
  
-        return $users;
+        return $debts;
     }
 
     public static function save($client_id, $title, $value, $due_date)
@@ -51,8 +51,14 @@ $DB = new DB; $stmt = $DB->prepare($sql);
         }
     }
  
-    public static function update($title, $value, $due_date)
+    public static function update($id, $title, $value, $due_date)
     {
+	if(empty($id) )
+	{
+            echo "Erro ao identificar dívida";
+            return false;
+	}
+
         if (empty($title) || empty($value) || empty($due_date))
         {
             echo "Volte e preencha todos os campos";

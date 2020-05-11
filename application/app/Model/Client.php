@@ -17,9 +17,9 @@ $DB = new DB; $stmt = $DB->prepare($sql);
  
         $stmt->execute();
  
-        $users = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        $clients = $stmt->fetchAll(\PDO::FETCH_ASSOC);
  
-        return $users;
+        return $clients;
     }
  
     public static function save($name, $cpf, $birthday, $address)
@@ -57,6 +57,7 @@ $DB = new DB; $stmt = $DB->prepare($sql);
             echo "Erro ao identificar cliente";
             return false;
 	}
+
         if (empty($name) || empty($cpf) || empty($birthday) || empty($address))
         {
             echo "Volte e preencha todos os campos";
@@ -78,7 +79,7 @@ $DB = new DB; $stmt = $DB->prepare($sql);
         }
         else
         {
-            echo "Erro ao cadastrar";
+            echo "Erro ao salvar";
             print_r($stmt->errorInfo());
             return false;
         }

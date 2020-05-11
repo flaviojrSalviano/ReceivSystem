@@ -44,6 +44,14 @@ $app->post('/debts/create', function () {
     return \App\Controller\DebtController::store();
 });
 
+$app->get('/debts/edit', function () {
+    return \App\Controller\DebtController::edit();
+});
+
+$app->post('/debts/edit', function () {
+    return \App\Controller\DebtController::update();
+});
+
 $app->get('/debts/delete', function () {
     return \App\Controller\DebtController::destroy();
 });
