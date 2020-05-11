@@ -103,4 +103,20 @@ $DB = new DB; $stmt = $DB->prepare($sql);
             return false;
         }
     }
+
+public static function selectByClient($client_id = null) { 
+	if (!empty($client_id)) { 
+	$where = 'WHERE client_id = :client_id'; 
+	$sql = sprintf("SELECT * FROM debts %s ORDER BY due_date ASC", $where); 
+	$DB = new DB; 
+        $stmt = $DB->prepare($sql);
+	$stmt->bindParam(':client_id', $client_id, \PDO::PARAM_INT);
+		$stmt->execute();
+	 
+		$debts = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+	 
+		return $debts;
+    	}
+	return [];
+} 
 }

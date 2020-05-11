@@ -1,6 +1,7 @@
 <?php
 namespace App\Controller;
 use App\Model\Client;
+use App\Model\Debt;
 
 final class ClientController extends Controller {
 
@@ -12,7 +13,8 @@ final class ClientController extends Controller {
     public static function show() {
         $id = isset($_GET['id']) ? $_GET['id'] : null;
         $client = (new Client)->selectAll($id);
-        return self::view('client/show', ['client' => $client]);
+	$debts = (new Debt)->selectByClient($id);
+        return self::view('client/show', ['client' => $client, 'debts' => $debts]);
     }
 
     public static function create() {

@@ -46,7 +46,7 @@
   <tbody>
     <?php foreach ($vars['clients'] as $client): ?>
     <tr>
-      <th scope="row"><a href="?r=/debts/create&id=<?php echo $client['id'] ?>" style="text-decoration:none; color:white"><?php echo $client['name'] ?></a></th>
+      <th scope="row"><a href="?r=/clients/show&id=<?php echo $client['id'] ?>" style="text-decoration:none; color:white"><?php echo $client['name'] ?></a></th>
       <td><?php echo $client['cpf'] ?></td>
       <td><?php echo $client['birthday'] ?></td>
       <td><?php echo $client['address'] ?></td>
