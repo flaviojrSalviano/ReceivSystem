@@ -50,8 +50,13 @@ $DB = new DB; $stmt = $DB->prepare($sql);
         }
     }
  
-    public static function update($name, $cpf, $birthday, $address)
+    public static function update($id, $name, $cpf, $birthday, $address)
     {
+	if(empty($id) )
+	{
+            echo "Erro ao identificar cliente";
+            return false;
+	}
         if (empty($name) || empty($cpf) || empty($birthday) || empty($address))
         {
             echo "Volte e preencha todos os campos";
@@ -65,7 +70,7 @@ $DB = new DB; $stmt = $DB->prepare($sql);
         $stmt->bindParam(':cpf', $cpf);
         $stmt->bindParam(':birthday', $birthday);
         $stmt->bindParam(':address', $address);
-        $stmt->bindParam(':id', $id, \PDO::PARAM_INT);
+        $stmt->bindParam(':id', $id);
  
         if ($stmt->execute())
         {

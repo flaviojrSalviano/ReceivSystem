@@ -30,17 +30,20 @@
 		<div class="row">
 			<div class="card mt-3">
 			  <div class="card-body">
-				<form action="?r=/clients/create" method="POST">
+				<?php foreach ($vars['client'] as $client): ?>
+				<form action="?r=/clients/edit" method="POST">
+				  <input type="hidden" id="id" name="id" value="<?php echo $client['id'] ?>">
 				  <label for="name">*Nome:</label><br>
-				  <input type="text" id="name" name="name" style="width:400px"><br>
+				  <input type="text" id="name" name="name" style="width:400px" value="<?php echo $client['name'] ?>"><br>
 				  <label for="cpf" class="mt-2">*cpf:</label><br>
-				  <input type="text" id="cpf" name="cpf"><br>
+				  <input type="text" id="cpf" name="cpf" value="<?php echo $client['cpf'] ?>"><br>
 				  <label for="birthday" class="mt-2">*Data de nascimento:</label><br>
-				  <input type="date" id="birthday" name="birthday"><br>
+				  <input type="date" id="birthday" name="birthday" value="<?php echo $client['birthday'] ?>"><br>
 				  <label for="address" class="mt-2">*Endereço:</label><br>
-				  <input type="text" id="address" name="address" style="width:600px"><br>
-				  <input type="submit" value="Salvar" class="card-link mt-2">
+				  <input type="text" id="address" name="address" style="width:600px" value="<?php echo $client['address'] ?>"><br>
+				  <input type="submit" value="Salvar alterações" class="card-link mt-2">
 				</form>
+				<?php endforeach ?>
 			  </div>
 			</div>
 

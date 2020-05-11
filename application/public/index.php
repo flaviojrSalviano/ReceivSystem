@@ -12,12 +12,20 @@ $app->get('/clients', function () {
     return \App\Controller\ClientController::index();
 });
 
+$app->get('/clients/show', function () {
+    return \App\Controller\ClientController::show();
+});
+
 $app->get('/clients/create', function () {
     return \App\Controller\ClientController::create();
 });
 
 $app->post('/clients/create', function () {
     return \App\Controller\ClientController::store();
+});
+
+$app->post('/clients/edit', function () {
+    return \App\Controller\ClientController::update();
 });
 
 $app->get('/clients/delete', function () {
