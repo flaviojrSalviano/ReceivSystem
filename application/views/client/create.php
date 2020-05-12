@@ -34,7 +34,7 @@
 				  <label for="name">*Nome:</label><br>
 				  <input type="text" id="name" name="name" style="width:400px" required><br>
 				  <label for="cpf" class="mt-2">*cpf:</label><br>
-				  <input type="text" id="cpf" name="cpf" required><br>
+				  <input type="number" id="cpf" name="cpf" required><br>
 				  <label for="birthday" class="mt-2">*Data de nascimento:</label><br>
 				  <input type="date" id="birthday" name="birthday" required><br>
 				  <label for="address" class="mt-2">*Endereço:</label><br>

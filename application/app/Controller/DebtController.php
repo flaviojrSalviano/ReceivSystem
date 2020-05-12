@@ -21,8 +21,7 @@ final class DebtController extends Controller {
         $due_date = isset($_POST['due_date']) ? $_POST['due_date'] : null;
 
         (new Debt)->save($client_id, $title, $value, $due_date);
-        self::redirect('/');
-	
+        self::redirect('/debts');
     }
 
     public static function edit() {
@@ -33,19 +32,18 @@ final class DebtController extends Controller {
 
     public static function update() {
         $id = isset($_POST['id']) ? $_POST['id'] : null;
-	$client_id = isset($_POST['client_id']) ? $_POST['client_id'] : null;
 	$title = isset($_POST['title']) ? $_POST['title'] : null;
 	$value = isset($_POST['value']) ? $_POST['value'] : null;
         $due_date = isset($_POST['due_date']) ? $_POST['due_date'] : null;
 
-        (new Debt)->update($id, $client_id, $title, $value, $due_date);
-        self::redirect('/');
+        (new Debt)->update($id, $title, $value, $due_date);
+        self::redirect('/debts');
 	
     }
 
     public static function destroy() {
 	$id = isset($_GET['id']) ? $_GET['id'] : null;
         (new Debt)->remove($id);
-        self::redirect('/');
+        self::redirect('/debts');
     }
 }

@@ -28,7 +28,7 @@ final class ClientController extends Controller {
         $address = isset($_POST['address']) ? $_POST['address'] : null;
 
         (new Client)->save($name, $cpf, $birthday, $address);
-        self::redirect('/');
+        self::redirect('/clients');
 	
     }
 
@@ -40,13 +40,13 @@ final class ClientController extends Controller {
         $address = isset($_POST['address']) ? $_POST['address'] : null;
 
         (new Client)->update($id, $name, $cpf, $birthday, $address);
-        self::redirect('/');
+        self::redirect('/clients');
 	
     }
 
     public static function destroy() {
 	$id = isset($_GET['id']) ? $_GET['id'] : null;
         (new Client)->remove($id);
-        self::redirect('/');
+        self::redirect('/clients');
     }
 }
