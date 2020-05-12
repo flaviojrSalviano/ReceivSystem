@@ -19,7 +19,7 @@ services:
     depends_on:
       - mysql
     environment:
-      - MYSQL_HOST=localhost
+      - MYSQL_HOST=mysql
       - MYSQL_DBNAME=receiv-db
       - MYSQL_USER=root
       - MYSQL_PASS=123.456
