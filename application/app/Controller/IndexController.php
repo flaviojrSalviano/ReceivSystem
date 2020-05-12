@@ -1,9 +1,9 @@
-<?php
-namespace App\Controller;
+	<?php
+	namespace App\Controller;
 
-final class IndexController extends Controller {
+	final class IndexController extends Controller {
 
-    public static function index() {
-        return self::view('index');
-    }
-}
+	    public static function index() {
+	        return self::view('index');
+	    }
+	}
